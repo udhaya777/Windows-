@@ -1,0 +1,2 @@
+
+Get-ADUser -Filter * -Properties *| Select name, @{n='Manager';e={(Get-ADUser $_.manager).name}} 
