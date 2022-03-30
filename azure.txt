@@ -1,2 +1,2 @@
 
-Get-ADUser -Filter * -Properties *| Select name, @{n='Manager';e={(Get-ADUser $_.manager).name}} 
+Get-ADUser -Filter * -Properties *| Select name, @{n='Manager';e={(Get-ADUser $_.manager).name}} | export-csv "c:\export.csv" 
